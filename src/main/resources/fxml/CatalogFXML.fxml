@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.gastroafisha.myappsadmin.CatalogFXMLController">
+    <stylesheets>
+        <URL value="@/styles/catalogfxml.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="26.0" layoutY="23.0" text="Тип" />
+      <Label layoutX="26.0" layoutY="58.0" text="Источник" />
+      <Label layoutX="26.0" layoutY="93.0" text="id источника" />
+      <Label layoutX="26.0" layoutY="129.0" text="id альбома" />
+      <Label layoutX="187.0" layoutY="198.0" text="Фильтр push" />
+      <CheckBox fx:id="visitorVisibleCheckBox" layoutX="26.0" layoutY="197.0" mnemonicParsing="false" text="Видно посетителю" />
+      <CheckBox fx:id="presenterVisibleCheckBox" layoutX="26.0" layoutY="233.0" mnemonicParsing="false" text="Видно участнику" />
+      <Label layoutX="187.0" layoutY="234.0" text="Фильтр push" />
+      <TextField fx:id="visitorFilterTextField" layoutX="283.0" layoutY="193.0" prefHeight="27.0" prefWidth="341.0" />
+      <TextField fx:id="presenterFilterTextField" layoutX="283.0" layoutY="229.0" prefHeight="27.0" prefWidth="341.0" />
+      <TextField fx:id="albumIdTextField" layoutX="113.0" layoutY="124.0" prefHeight="27.0" prefWidth="154.0" />
+      <CheckBox fx:id="fixedPostCheckBox" layoutX="283.0" layoutY="129.0" mnemonicParsing="false" text="Фиксированный пост" />
+      <TextField fx:id="sourceIdTextField" layoutX="113.0" layoutY="88.0" prefHeight="27.0" prefWidth="154.0" />
+      <ComboBox fx:id="sourceComboBox" layoutX="113.0" layoutY="53.0" prefHeight="27.0" prefWidth="154.0" />
+      <ComboBox fx:id="typeComboBox" layoutX="113.0" layoutY="18.0" prefHeight="27.0" prefWidth="154.0" />
+      <TextField fx:id="filterTextField" layoutX="114.0" layoutY="158.0" prefHeight="27.0" prefWidth="341.0" />
+      <Label layoutX="26.0" layoutY="163.0" text="Фильтр" />
+      <Button layoutX="556.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleCancel" text="Отмена" />
+      <Button layoutX="454.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleSave" text="Сохранить" />
+   </children>
+</AnchorPane>

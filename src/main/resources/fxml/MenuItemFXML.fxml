@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.gastroafisha.myappsadmin.MenuItemFXMLController">
+    <stylesheets>
+        <URL value="@/styles/menuitemfxml.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Название" />
+      <Label layoutX="14.0" layoutY="46.0" text="Тип" />
+      <Label layoutX="14.0" layoutY="80.0" text="Пиктограмма" />
+      <TextField fx:id="nameTextField" layoutX="120.0" layoutY="9.0" prefHeight="27.0" prefWidth="258.0" />
+      <ComboBox fx:id="typeComboBox" layoutX="120.0" layoutY="41.0" onAction="#handleTypeChange" prefHeight="27.0" prefWidth="258.0" />
+      <TabPane fx:id="mainTabPane" layoutX="2.0" layoutY="121.0" prefHeight="287.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <tabs>
+          <Tab fx:id="standartTab" text="Стандарт">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane fx:id="standartTabPane" layoutX="64.0" layoutY="43.0" prefHeight="211.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                          <tabs>
+                            <Tab fx:id="aboutTab" text="About">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="aboutCatalogSelectComboBox" layoutX="76.0" layoutY="9.0" prefHeight="27.0" prefWidth="403.0" />
+                                          <Label layoutX="14.0" layoutY="14.0" text="Каталог" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="mapTab" text="Map">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="16.0" layoutY="17.0" text="Lat" />
+                                          <TextField fx:id="latTextField" layoutX="80.0" layoutY="12.0" prefHeight="27.0" prefWidth="163.0" />
+                                          <TextField fx:id="lonTextField" layoutX="80.0" layoutY="45.0" prefHeight="27.0" prefWidth="163.0" />
+                                          <Label layoutX="16.0" layoutY="50.0" text="Lon" />
+                                          <Label layoutX="16.0" layoutY="82.0" text="Zoom" />
+                                          <TextField fx:id="zoomTextField" layoutX="80.0" layoutY="77.0" prefHeight="27.0" prefWidth="163.0" />
+                                          <TextField fx:id="mapCaptionTextField" layoutX="80.0" layoutY="110.0" prefHeight="27.0" prefWidth="509.0" />
+                                          <Label layoutX="16.0" layoutY="115.0" text="Надпись" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="searchTab" text="Search">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="favoritesTab" text="Favorites">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="planTab" text="Plan">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView fx:id="plansListView" layoutX="14.0" layoutY="36.0" prefHeight="138.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                          <Button layoutX="9.0" layoutY="8.0" mnemonicParsing="false" onAction="#handlePlanAdd" text="Добавить" />
+                                          <Button layoutX="96.0" layoutY="8.0" mnemonicParsing="false" onAction="#handlePlanRemove" text="Удалить" />
+                                          <TextField fx:id="newCaptionTextField" layoutX="264.0" layoutY="8.0" prefHeight="27.0" prefWidth="112.0" />
+                                          <TextField fx:id="newUrlTextField" layoutX="383.0" layoutY="8.0" prefHeight="27.0" prefWidth="240.0" AnchorPane.leftAnchor="383.0" AnchorPane.rightAnchor="16.0" />
+                                          <Button layoutX="173.0" layoutY="8.0" mnemonicParsing="false" onAction="#handlePlanChange" text="Изменить" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="ticketTab" text="Ticket">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="urlTab" text="Url">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="urlTextField" layoutX="52.0" layoutY="9.0" prefHeight="27.0" prefWidth="509.0" />
+                                          <Label layoutX="14.0" layoutY="14.0" text="Url" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                        <ComboBox fx:id="clsSelectComboBox" layoutX="80.0" layoutY="9.0" onAction="#handleClsChange" prefHeight="27.0" prefWidth="258.0" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Класс" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="formTab" text="Форма">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="formSelectComboBox" layoutX="80.0" layoutY="9.0" prefHeight="27.0" prefWidth="403.0" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Форма" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="catalogTab" text="Каталог">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="catalogSelectComboBox" layoutX="80.0" layoutY="9.0" prefHeight="27.0" prefWidth="403.0" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Каталог" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="456.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleSave" text="Сохранить" />
+      <Button layoutX="558.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleCancel" text="Отмена" />
+      <ComboBox fx:id="iconComboBox" layoutX="120.0" layoutY="75.0" prefHeight="48.0" prefWidth="87.0" />
+   </children>
+</AnchorPane>

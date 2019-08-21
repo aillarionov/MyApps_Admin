@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.gastroafisha.myappsadmin.FormFXMLController">
+    <stylesheets>
+        <URL value="@/styles/formfxml.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="nameTextField" layoutX="85.0" layoutY="9.0" prefHeight="27.0" prefWidth="372.0" />
+      <Label layoutX="14.0" layoutY="14.0" text="Название" />
+      <ListView fx:id="itemsListView" layoutX="16.0" layoutY="45.0" prefHeight="368.0" prefWidth="258.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="366.0" />
+      <Button layoutX="558.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleCancel" text="Отмена" />
+      <Button layoutX="458.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleSave" text="Сохранить" />
+      <Button layoutX="353.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleAddItem" text="Добавить" />
+      <Button layoutX="449.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleRemoveItem" text="Удалить" />
+      <Button layoutX="535.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleChangeItem" text="Применить" />
+      <Label layoutX="285.0" layoutY="54.0" text="Код" />
+      <Label layoutX="284.0" layoutY="87.0" text="Заголовок" />
+      <TextField fx:id="codeTextField" layoutX="392.0" layoutY="49.0" prefHeight="27.0" prefWidth="234.0" />
+      <TextField fx:id="titleTextField" layoutX="392.0" layoutY="82.0" prefHeight="27.0" prefWidth="234.0" />
+      <TextField fx:id="defaultTextField" layoutX="392.0" layoutY="115.0" prefHeight="27.0" prefWidth="234.0" />
+      <Label layoutX="284.0" layoutY="120.0" text="По умолчанию" />
+      <ComboBox fx:id="typeComboBox" layoutX="392.0" layoutY="149.0" prefHeight="27.0" prefWidth="234.0" />
+      <Label layoutX="284.0" layoutY="154.0" text="Тип" />
+      <CheckBox fx:id="requiredCheckBox" layoutX="391.0" layoutY="190.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="234.0" text="Обязательное" />
+      <TextField fx:id="dataEmailTextField" layoutX="284.0" layoutY="386.0" prefHeight="27.0" prefWidth="336.0" />
+      <Label layoutX="283.0" layoutY="360.0" text="Email (несколько через запятую)" />
+   </children>
+</AnchorPane>
